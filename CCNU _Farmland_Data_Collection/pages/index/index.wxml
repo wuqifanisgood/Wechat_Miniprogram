@@ -1,0 +1,31 @@
+<!-- <view class="container"> -->
+  <map id="myMap" 
+    longitude="{{longitude}}"
+    latitude="{{latitude}}"
+    show-location
+    scale='16'
+    markers="{{markers}}"
+    bindmarkertap="markerTap"
+    bindtap="mapTap"
+    controls="{{controls}}"
+    bindcontroltap="controltap"
+    bindregionchange="regionchange"
+    enable-satellite="true"
+
+    >
+
+
+    <!-- <cover-view >
+      <cover-image src="../../images/marker2.png" style="width=10px height=10px">
+      </cover-image>
+      
+      <button size="mini" class="button" bindtap="showDialogBtn">
+        <span class="button">采集</span>
+      </button>
+    </cover-view> -->
+    
+  </map>
+
+<!-- </view> -->
+<!-- 若要开启卫星图，则在<map>标签中添加enable-satellite="true"属性 -->
+<!-- 关于图层切换，添加两个图层？？？，然后设置hidden控制哪个显示 -->

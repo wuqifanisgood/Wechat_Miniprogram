@@ -1,0 +1,5 @@
+/* pages/allRecords.wxss */
+#myMap{
+  width: 100%;
+  height: 100vh;
+}

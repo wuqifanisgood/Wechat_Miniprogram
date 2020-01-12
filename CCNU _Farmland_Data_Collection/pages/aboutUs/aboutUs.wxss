@@ -1,0 +1,15 @@
+/* pages/aboutUs/aboutUs.wxss */
+.aboutUsMain{
+  width: 100%;
+  height: 100vh;
+  background-color:black;
+  color: yellow;
+}
+.contactUs{
+
+  flex-direction:column;
+  background-color:white;
+  color: blue;
+  font-size: 0.5rem;
+	text-align: center;
+}
