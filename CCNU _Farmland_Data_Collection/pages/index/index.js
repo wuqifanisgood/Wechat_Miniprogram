@@ -21,6 +21,7 @@ Page({
 
     controls: [
       {
+        //左二，回到定位按钮
         id: 0,
           //设置controls的icaonPath时不要使用中文，不然有些机型不显示（独家发现）
         iconPath: "../../images/mylocation.png",
@@ -34,6 +35,7 @@ Page({
       },
 
       {
+        //左一，提交按钮
         id: 1,
         // iconPath: "../../images/marker3-48.png",
         iconPath: "../../images/submit.png",
@@ -43,6 +45,23 @@ Page({
           width: 30,
           height: 30
         },
+
+        
+        clickable: true
+      },
+
+      {
+        //左3，说明按钮
+        id: 2,
+        iconPath: "../../images/tips.png",
+        position: {
+          left: 62,
+          top: 2,
+          width: 30,
+          height: 30
+        },
+
+
         clickable: true
       }
     ],
@@ -76,7 +95,10 @@ Page({
     this.mapCtx = wx.createMapContext('myMap');   //获取地图存入变量
   },
 
+  onShareAppMessage: function () {
 
+  },
+  
   markerTap(e) {    //点击marker事件，再次点击标记进行删除
     var that = this;
 
@@ -155,7 +177,14 @@ Page({
 
     if (e.controlId == 0) { //如果ID是0，返回当前位置
       this.mapCtx.moveToLocation()
-    } else if (e.controlId == 1 && markersList.length >= 1) {
+    }else if(e.controlId == 2){
+      wx.showModal({
+        title: '提示！',
+        content: "请到关于'我们页面'查看本软件的 使用方法 和 详细介绍。",
+        showCancel: false,
+        confirmText: "确定",
+      })
+    }else if(e.controlId == 1 && markersList.length >= 1) {
       //如果controllId为1（标记），则执行弹出层函数。
 
       wx.showActionSheet({

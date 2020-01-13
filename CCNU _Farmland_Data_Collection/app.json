@@ -10,9 +10,7 @@
     "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#333",
     "navigationBarTitleText": "众源农情数据采集系统",
-    "navigationBarTextStyle": "white",
-    "enablePullDownRefresh":true
-    
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "selectedColor": "#219bf3",
