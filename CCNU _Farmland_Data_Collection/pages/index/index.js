@@ -4,7 +4,8 @@ var util = require("../../utils/util.js");
 var markerId = 1;
 var markersList = [];
 
-var landClassList = ['0.水稻','1.小麦','2.油菜','3.虾稻田','4.玉米','5.大豆'];
+// var landClassList = ['0.水稻','1.小麦','2.油菜','3.虾稻田','4.玉米','5.大豆'];   //多类别开启
+var landClassList = ['冬油菜','冬闲田','其它'];   //类别
 
 const db = wx.cloud.database().collection("CCNU_Farm_Data_Collection");   //数据库实例化
 // var latitude = "1";
@@ -188,13 +189,14 @@ Page({
       //如果controllId为1（标记），则执行弹出层函数。
 
       wx.showActionSheet({
-        itemList: [ '0.水稻', '1.小麦', '2.油菜', '3.虾稻田', '4.玉米', '5.大豆'],
+        // itemList: [ '0.水稻', '1.小麦', '2.油菜', '3.虾稻田', '4.玉米', '5.大豆'],
+        itemList: ['此田块种了冬油菜','此田块为冬闲田','其它'],
         success(res) {
           console.log(res.tapIndex)
           var tapIndex = res.tapIndex;    //返回地类数组索引
           wx.showModal({
             title: '请确认',
-            content: '本次一共提交 ' + markersList.length + ' 条数据,' + '类型为 ' + landClassList[tapIndex] + '\n是否提交？',
+            content: '本次一共提交 ' + markersList.length + ' 条数据,' + '类型为 [' + landClassList[tapIndex] + ']\n是否提交？',
             success(res) {
               if (res.confirm) {
                 console.log('用户点击确定');
